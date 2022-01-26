@@ -1,3 +1,4 @@
+
 tasks:
   - init: npm install
     command: |
@@ -12,3 +13,6 @@ github:
     master: true
     branches: true
     pullRequests: true
+vscode:
+  extensions:
+    - jpoissonnier.vscode-styled-components

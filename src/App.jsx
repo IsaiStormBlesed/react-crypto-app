@@ -1,44 +1,52 @@
-import { useState } from 'react'
-import logo from './logo.svg'
-import './App.css'
+import styled from "@emotion/styled";
+import ImgCrypto from "./img/imagen-criptos.png"
+
+const Container = styled.div`
+  max-width: 900px;
+  margin: 0 auto;
+  width: 90%;
+  @media (min-width: 992px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem; 
+  }
+`
+const Image = styled.img`
+  display: block;
+  max-width: 400px;
+  margin: 100px auto 0 auto;
+  width: 80%;
+`
+const Heading = styled.h1`
+  color: #fff;
+  font-family: 'Lato', sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  margin-top: 80px;
+  margin-bottom: 50px;
+  text-align: center;
+
+  &::after {
+    background-color: #66a2fe;
+    content: '';
+    display: block;
+    height: 6px;
+    margin: 10px auto 0 auto;
+    width: 100px;
+  }
+`
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.jsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
-    </div>
+    <Container>
+      <Image 
+        src={ImgCrypto}
+        alt="Crypto Image"
+      />
+      <Heading>Quote your Cryptos in an Instance</Heading>
+
+    </Container>
   )
 }
 

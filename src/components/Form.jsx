@@ -1,8 +1,8 @@
 import useSelectCoins from "../hooks/useSelectCoins";
-import { currencies } from "../data/helperData";
-import styled from "@emotion/styled";
-import { useEffect, useState } from "react";
 import Error from "./Error";
+import { currencies } from "../data/helperData";
+import { useEffect, useState } from "react";
+import styled from "@emotion/styled";
 
 const InputSubmit = styled.input`
   background-color: #9497ff;
@@ -23,7 +23,7 @@ const InputSubmit = styled.input`
   }
 `
 
-const Form = () => {
+const Form = ({ setSelectedCurrency }) => {
 
   const [error, setError] = useState(false);
   const [cryptos, setCryptos] = useState([]);
@@ -61,6 +61,10 @@ const Form = () => {
     }
 
     setError(false)
+    setSelectedCurrency({
+      currency,
+      crypto
+    })
   }
   
 
